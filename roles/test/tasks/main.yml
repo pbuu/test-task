@@ -1,0 +1,11 @@
+---
+# tasks file for test
+- name: Copy rpm 
+  copy:
+   src: /home/test/result/test-task-0-1.el7.noarch.rpm
+   dest: /tmp/test-task-0-1.el7.noarch.rpm
+
+- name: Install package.
+  yum:
+   name: /tmp/test-task-0-1.el7.noarch.rpm
+   state: present
